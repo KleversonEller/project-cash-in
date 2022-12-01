@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    container_name: /app-web
+    build: ./web
+    ports:
+      - 3014:3014
+    working_dir: /app
+    volumes:
+      - ./web:/app
+
+  server:
+    container_name: /app-server
+    build: ./server
+    ports:
+      - 3015:3015
+      - 5555:5555
+    working_dir: /app-server
+    volumes:
+      - ./server:/app-server
+    environment:
+        DATABASE_URL: postgresql://postgres:Desafiotecnicong4321@db.nwanvnhbxyvncozsnvyl.supabase.co:5432/postgres?schema=public
+        JWT_SECRET: lulabolusco

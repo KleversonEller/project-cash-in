@@ -1,0 +1,18 @@
+{
+  "name": "teste-tecnico-ng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "(cd ./packages/server && npm test)",
+    "start": "(cd ./packages/web && npm i) && (cd ./packages/server && npm i)",
+    "start:docker": "(cd ./packages && docker-compose up -d)",
+    "start:server": "(cd ./packages/server && npm run dev)",
+    "start:web": "(cd ./packages/web && npm run dev)",
+    "com": "(cd ./packages && docker exec -it app-server bash)",
+    "db:local": "(cd ./packages/server && npx prisma studio)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

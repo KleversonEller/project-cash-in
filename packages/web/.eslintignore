@@ -1,0 +1,6 @@
+/node_modules
+dist
+/*.js
+/src/*.ts
+/*.ts
+/src/vite-env.d.ts
