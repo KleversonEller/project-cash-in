@@ -1,0 +1,66 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "tsx": true
+        },
+        "ecmaVersion": 2019,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-underscore-dangle": "off",
+        "no-console": "off",
+        "camelcase": "warn",
+        "arrow-parens": [2, "always"],
+        "quotes": [2, "single"],
+        "implicit-arrow-linebreak": "off",
+        "consistent-return": "off",
+        "no-unused-vars": [
+        "error",
+        {
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
+        }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_",
+                "ignoreRestSiblings": true
+            }
+        ],
+        "object-curly-newline": "off",
+        "max-params": "off",
+        "max-lines": "off",
+        "max-lines-per-function": "off",
+        "max-len": "off",
+        "react/state-in-constructor": "off",
+        "react/no-did-mount-set-state": "off",
+        "react/no-did-update-set-state": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+}
