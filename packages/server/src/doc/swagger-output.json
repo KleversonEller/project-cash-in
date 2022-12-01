@@ -1,0 +1,236 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "REST API NG.Teste",
+        "description": "Introduction:\nREST API para criação de usuários e manipulação de saldo bancário\n\nOverview:\nA API conta com as seguintes rotas seguindo o padrão REST:\n(POST: /newUser) para criação de novos usuários.\n(POST: /login) para fazer a autenticação de um usuário já cadastrado.\n\nAuthentication:\nA API utiliza o sistema de autenticação por token, portanto é necessário passar um token via header em algumas requisições."
+    },
+    "host": "localhost:3015",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "securityDefinitions":{
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "paths": {
+        "/newUser": {
+        "post": {
+            "description": "Rota responsável por criar um novo usuário no banco de dados",
+            "tags": ["User"],
+            "parameters": [
+                {
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                        "username": {
+                            "description": "Insira um nome de usuário com no mínimo 3 caracteres",
+                            "example": "Maria Eduarda"
+                        },
+                        "password": {
+                            "description": "Insira aqui uma senha com mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 numero",
+                            "example": "Minha2SuperSenha"
+                        }
+                        }
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "User created successfully"
+                },
+                "400": {
+                    "description": "User already exists"
+                },
+                "405": {
+                    "description": "Joi validation error messages"
+                },
+                "424": {
+                    "description": "Failed in hash password"
+                },
+                "500": {
+                    "description": "Internal server error"
+                }
+            }
+        }
+        },
+        "/login": {
+            "post": {
+                "description": "Rota responsável por verificar o login de um usuário",
+                "tags": ["User"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                            "username": {
+                                "description": "Insira um nome de usuário já cadastrado",
+                                "example": "Maria Eduarda"
+                            },
+                            "password": {
+                                "description": "Insira aqui sua senha",
+                                "example": "Minha2SuperSenha"
+                            }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JWT token containing user id in its body"
+                    },
+                    "400": {
+                        "description": "Non-existent user or Password invalid"
+                    },
+                    "405": {
+                        "description": "Joi validation error messages"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/getUserBalance": {
+            "get": {
+                "description": "Rota responsável por retornar o saldo de um usuário",
+                "tags": ["Account"],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Value user balance"
+                    },
+                    "401": {
+                        "description": "Expired or invalid token"
+                    },
+                    "417": {
+                        "description": "Token is required"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/cashOut": {
+            "patch": {
+                "description": "Rota responsável por fazer uma transação entre usuários",
+                "tags": ["Transactions"],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "description": "Valor a ser transferido, deve ser um numero positivo",
+                                    "type": "number",
+                                    "example": 45.50
+                                },
+                                "username": {
+                                    "description": "Insira um nome de usuário já cadastrado que recebera a transferência",
+                                    "example": "Daniel Costa"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transfer made successfully"
+                    },
+                    "400": {
+                        "description": "Transaction failed, check the information provided"
+                    },
+                    "401": {
+                        "description": "Expired or invalid token"
+                    },
+                    "405": {
+                        "description": "Joi validation error messages"
+                    },
+                    "417": {
+                        "description": "Token is required"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/filterTransactions": {
+            "post": {
+                "description": "Rota responsável por retornar o histórico de transações feitas pelo usuário e aplicação de filtros",
+                "tags": ["Transactions"],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "description": "Aplicação da filtragem por data da transação, (esse parâmetro pode ser ocultado)",
+                                    "type": "date",
+                                    "example": "2022-11-21"
+                                },
+                                "credited": {
+                                    "description": "Aplicação da filtragem por transações de credito, (esse parâmetro pode ser ocultado)",
+                                    "type": "boolean",
+                                    "example": false
+                                },
+                                "debited": {
+                                    "description": "Aplicação da filtragem por transações de debito, (esse parâmetro pode ser ocultado)",
+                                    "type": "boolean",
+                                    "example": true
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transactions made by the user"
+                    },
+                    "401": {
+                        "description": "Expired or invalid token"
+                    },
+                    "404": {
+                        "description": "No transaction found"
+                    },
+                    "405": {
+                        "description": "Joi validation error messages"
+                    },
+                    "417": {
+                        "description": "Token is required"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
