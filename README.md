@@ -82,6 +82,8 @@ A aplicação foi construida utilizando React.js juntamente com Node.js e Typesc
    * <a href="https://jestjs.io/pt-BR/" target="_blank" rel="external"><span><strong>Jest</strong></span></a> - Ferramenta de construção de testes automatizados.
 
    * <a href="https://swagger.io/docs/" target="_blank" rel="external"><span><strong>Swagger UI</strong></span></a> - Ferramenta para criação da documentação da API.
+
+  * <a href="https://www.npmjs.com/package/bcrypt" target="_blank" rel="external"><span><strong>Bcrypt</strong></span></a> - Ferramenta para criptografia de senha.
 </details>
 <br />
 <hr/>
