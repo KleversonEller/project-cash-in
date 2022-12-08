@@ -18,6 +18,5 @@ services:
     working_dir: /app-server
     volumes:
       - ./server:/app-server
-    environment:
-        DATABASE_URL: postgresql://postgres:Desafiotecnicong4321@db.nwanvnhbxyvncozsnvyl.supabase.co:5432/postgres?schema=public
-        JWT_SECRET: lulabolusco
+    env_file:
+      - ./server/.env
