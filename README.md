@@ -96,14 +96,14 @@ Primeiro clone o projeto para sua maquina:
 <br />
 
 ```sh
-git clone git@github.com:KleversonEller/teste-tecnico-NG.git
+git clone git@github.com:KleversonEller/project-cash-in.git
 ```
 <br />
-Apos clonar o projeto, entre na pasta raiz do projeto `./teste-tecnico-NG`:
+Apos clonar o projeto, entre na pasta raiz do projeto `./project-cash-in`:
 <br />
 
 ```sh
-cd teste-tecnico-NG
+cd project-cash-in
 ```
 <br />
 <!-- Em seguida execute o seguinte comando para iniciar a aplicação via Docker-compose:
@@ -128,7 +128,7 @@ npm run start:web
 Esses comandos irá instalar as dependências de todo o `server` e da aplicação `web`, pode levar alguns minutos.
 <br /><br />
 
-Para rodar todos os testes da aplicação, na raiz do projeto `./teste-tecnico-NG` execute os seguintes comandos:
+Para rodar todos os testes da aplicação, na raiz do projeto `./project-cash-in` execute os seguintes comandos:
 
 ```sh
 npm test
@@ -183,7 +183,7 @@ npx prisma studio -->
 <!-- Isso ira abrir o banco de dados direto no navegador utilizando a `porta 5555` da sua máquina (http://localhost:5555/). -->
 <!-- <br /> -->
 
-Para visualizar o banco de dados rodando a aplicação localmente, na raiz do projeto `./teste-tecnico-NG` utilize o seguinte comando.
+Para visualizar o banco de dados rodando a aplicação localmente, na raiz do projeto `./project-cash-in` utilize o seguinte comando.
 
 ```sh
 npm run db:local
