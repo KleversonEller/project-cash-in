@@ -15,7 +15,7 @@ function CreateUser() {
       <button
         type="button"
         onClick={() => { navigate('/newUser'); }}
-        className="bg-green-500 h-2/6 w-1/4 rounded-lg text-2xl font-bold hover:bg-green-400"
+        className="bg-green-500 h-28 w-44 rounded-lg text-2xl font-bold hover:bg-green-400"
       >
         Criar usuário
       </button>

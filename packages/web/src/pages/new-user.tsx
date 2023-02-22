@@ -32,10 +32,10 @@ function NewUser() {
   const { onChange, onSubmit, values } = SubmitForm(handleSave, {} as ILogin);
 
   return (
-    <div className="p-10 flex items-center justify-center h-screen bg-zinc-500/50">
+    <div className="p-0 flex items-center justify-center h-screen bg-zinc-500/50 sm:p-10">
       <form
         onSubmit={onSubmit}
-        className="bg-zinc-200 flex flex-col justify-evenly items-center drop-shadow-2xl rounded h-4/5 w-2/3 gap-4"
+        className="bg-zinc-200 flex flex-col justify-evenly items-center drop-shadow-2xl rounded gap-4  w-screen h-screen sm:h-4/5 sm:w-2/3"
       >
         <div className="flex flex-col gap-4 font-bold text-2xl w-3/5">
           <label htmlFor="username">

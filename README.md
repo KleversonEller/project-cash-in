@@ -1,11 +1,11 @@
 # **Contexto do projeto**
 
-Aplicação dockerizada de carteira digital, onde o usuário pode criar um novo usuário, efetuar login, realizar transferências, visualizar e filtrar todas as transações que participou (cash-in\cash-out).
+Aplicação de carteira digital, onde o usuário pode criar um novo usuário, efetuar login, realizar transferências, visualizar e filtrar todas as transações que participou (cash-in\cash-out).
 
 <details>
 <summary><strong>As seguintes regras de negocio foram utilizadas para a construção dessa aplicação</strong></summary><br />
 
-* Qualquer pessoa deverá poder fazer parte da NG. Para isso, basta realizar o cadastro informando username e password.
+* Qualquer pessoa deverá poder fazer parte. Para isso, basta realizar o cadastro informando username e password.
 
 * Deve-se garantir que cada username seja único e composto por, pelo menos, 3 caracteres.
 
@@ -88,7 +88,7 @@ A aplicação foi construida utilizando React.js juntamente com Node.js e Typesc
 <br />
 <hr/>
 
-## **Como iniciar o projeto via Docker ou localmente**
+## **Como iniciar o projeto localmente**
 <br />
 O projeto utiliza as portas (3014, 3015 e 5555) garanta que essas portas não estejam em uso antes de iniciar.
 <br />
@@ -106,14 +106,15 @@ Apos clonar o projeto, entre na pasta raiz do projeto `./teste-tecnico-NG`:
 cd teste-tecnico-NG
 ```
 <br />
-Em seguida execute o seguinte comando para iniciar a aplicação via Docker-compose:
+<!-- Em seguida execute o seguinte comando para iniciar a aplicação via Docker-compose:
 <br />
 
-```sh
-npm run start:docker
-```
+<!-- ```sh -->
+<!-- npm run start:docker -->
+<!-- ``` -->
+
 <br />
-Ou para iniciar a aplicação localmente utilize os seguintes comandos em terminais separados:
+Para iniciar a aplicação localmente utilize os seguintes comandos em terminais separados:
 <br />
 Obs: Sera necessário ter instalado o Node.js na versão 16
 <br />
@@ -130,7 +131,6 @@ Esses comandos irá instalar as dependências de todo o `server` e da aplicaçã
 Para rodar todos os testes da aplicação, na raiz do projeto `./teste-tecnico-NG` execute os seguintes comandos:
 
 ```sh
-npm run com
 npm test
 ```
 
@@ -139,55 +139,49 @@ Isso irá executar os testes de cada aplicação de uma única vez.
 
 ## **Pagina Web**
 
-A página web irá rodar na `porta 3014` da sua máquina (http://localhost:3014/) via Docker, localmente a aplicação ira indicar a porta quando for iniciada.
+A página web irá rodar na `porta 3014` da sua máquina (http://localhost:3014/).
 <br /><br />
 
 ## **API**
 
 A API ira utilizar a `porta 3015` da sua máquina (http://localhost:3015/).
 <br />
-Já existe quatro usuários cadastrados para testar a aplicação, sendo eles:
+Já existe 3 usuários cadastrados para testar a aplicação, sendo eles:
 <br />
 
 *User 1*
 <br />
 `Username: Daniel Costa`
 <br />
-`Password: Minha2SuperSenha`
+`Password: Minhasenha123`
 <br />
 
 *User 2*
 <br />
 `Username: Julia Santos`
 <br />
-`Password: Minha2SuperSenha`
+`Password: Minhasenha123`
 <br />
 
 *User 3*
 <br />
 `Username: Lucas Silva`
 <br />
-`Password: Minha2SuperSenha`
+`Password: Minhasenha123`
 <br />
-
-*User 4*
-<br />
-`Username: Thiago Almeida`
-<br />
-`Password: Minha2SuperSenha`
 
 <br />
 
-Caso queira conferir as informações no banco de dados, utilizando Docker, na raiz do projeto `./teste-tecnico-NG` utilize os seguintes comandos para visualizar o banco de dados.
-<br />
+<!-- Caso queira conferir as informações no banco de dados, utilizando Docker, na raiz do projeto `./teste-tecnico-NG` utilize os seguintes comandos para visualizar o banco de dados. -->
+<!-- <br /> -->
 
-```sh
-npm run com
-npx prisma studio
-```
+<!-- ```sh -->
+<!-- npm run com
+npx prisma studio -->
+<!-- ``` -->
 
-Isso ira abrir o banco de dados direto no navegador utilizando a `porta 5555` da sua máquina (http://localhost:5555/).
-<br />
+<!-- Isso ira abrir o banco de dados direto no navegador utilizando a `porta 5555` da sua máquina (http://localhost:5555/). -->
+<!-- <br /> -->
 
 Para visualizar o banco de dados rodando a aplicação localmente, na raiz do projeto `./teste-tecnico-NG` utilize o seguinte comando.
 

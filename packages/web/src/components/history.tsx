@@ -23,8 +23,8 @@ function History(props: HistoryProps) {
       const accountBalance = await getUserBalance(token);
       const accountTransactions = await getTransactions({}, token);
 
+      if (accountTransactions.data) setTransactions(accountTransactions.data);
       setAccountId(accountBalance.data.accountId);
-      setTransactions(accountTransactions.data);
     };
 
     getBalance();

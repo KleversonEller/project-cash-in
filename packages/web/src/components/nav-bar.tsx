@@ -27,7 +27,7 @@ function NavBar(props: NavBarProps) {
 
   return (
     <div className="flex justify-between items-center bg-zinc-500/50 w-full h-20 px-10">
-      <img className="h-20 w-48" src={logo} alt="Logo ng.cash" />
+      <img className="h-20 w-50" src={logo} alt="Logo ng.cash" />
 
       <button
         type="button"
