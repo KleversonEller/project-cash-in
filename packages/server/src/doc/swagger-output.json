@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "REST API NG.Teste",
+        "title": "REST API Cash-in",
         "description": "Introduction:\nREST API para criação de usuários e manipulação de saldo bancário\n\nOverview:\nA API conta com as seguintes rotas seguindo o padrão REST:\n(POST: /newUser) para criação de novos usuários.\n(POST: /login) para fazer a autenticação de um usuário já cadastrado.\n\nAuthentication:\nA API utiliza o sistema de autenticação por token, portanto é necessário passar um token via header em algumas requisições."
     },
     "host": "localhost:3015",
