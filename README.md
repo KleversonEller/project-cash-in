@@ -1,6 +1,9 @@
 # **Contexto do projeto**
 
 Aplicação de carteira digital, onde o usuário pode criar um novo usuário, efetuar login, realizar transferências, visualizar e filtrar todas as transações que participou (cash-in\cash-out).
+<br />
+
+![img](packages/web/src/images/gif-cash-in.gif)
 
 <details>
 <summary><strong>As seguintes regras de negocio foram utilizadas para a construção dessa aplicação</strong></summary><br />
@@ -27,7 +30,7 @@ Aplicação de carteira digital, onde o usuário pode criar um novo usuário, ef
   - Data de realização da transação e/ou (cash-in\cash-out)
 </details>
 
-<br /><br />
+<br />
 A aplicação foi construida utilizando React.js juntamente com Node.js e Typescript.
 <br /><br />
 <hr/>
