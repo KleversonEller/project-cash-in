@@ -149,31 +149,13 @@ A página web irá rodar na `porta 3014` da sua máquina (http://localhost:3014/
 
 A API ira utilizar a `porta 3015` da sua máquina (http://localhost:3015/).
 <br />
-Já existe 3 usuários cadastrados para testar a aplicação, sendo eles:
+Para utilizar a API voce deve criar um arquivo `.ENV` e fazer uma conexão com um banco de dados PostgreSQL utilizando o arquivo `.ENV` de exemplo que foi disponibilizado, em seguida utilize o seguinte comando para subir as configurações do banco e suas tabelas:
 <br />
 
-*User 1*
-<br />
-`Username: Daniel Costa`
-<br />
-`Password: Minhasenha123`
-<br />
+```sh
+npm run res:db
+```
 
-*User 2*
-<br />
-`Username: Julia Santos`
-<br />
-`Password: Minhasenha123`
-<br />
-
-*User 3*
-<br />
-`Username: Lucas Silva`
-<br />
-`Password: Minhasenha123`
-<br />
-
-<br />
 
 <!-- Caso queira conferir as informações no banco de dados, utilizando Docker, na raiz do projeto `./teste-tecnico-NG` utilize os seguintes comandos para visualizar o banco de dados. -->
 <!-- <br /> -->

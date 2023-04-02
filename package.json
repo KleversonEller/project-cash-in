@@ -10,6 +10,7 @@
     "start:server": "(cd ./packages/server && npm run dev)",
     "start:web": "(cd ./packages/web && npm run dev)",
     "com": "(cd ./packages && docker exec -it app-server bash)",
+    "res:db": "(cd ./packages/server && npx prisma migrate dev)",
     "db:local": "(cd ./packages/server && npx prisma studio)"
   },
   "keywords": [],
